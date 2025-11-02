@@ -1,26 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Web Project</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      margin-top: 100px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yashraj Chaudhari — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hello, I’m Yashraj 👋</h1>
-  <p>This is my first web project on GitHub.</p>
-  <button onclick="alert('Thanks for visiting!')">Click Me</button>
+  <header class="nav">
+    <div class="container">
+      <h1 class="brand">Yashraj<span class="accent">.</span></h1>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="glass container">
+        <h2>Hi, I’m <strong>Yashraj</strong> 👋</h2>
+        <p class="lead">Aspiring Web Developer • Exploring Cloud & AI/ML</p>
+        <div class="actions">
+          <a class="btn" href="#projects">View Projects</a>
+          <button id="helloBtn" class="btn outline">Say Hello</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="glass container small">
+        <h3>About Me</h3>
+        <p>I enjoy building clean, simple websites and learning cloud + AI tools. Fast learner, team player, and eager to lead projects that matter.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container skills-grid">
+        <div class="glass card"><h4>Frontend</h4><p>HTML • CSS • JavaScript</p></div>
+        <div class="glass card"><h4>Cloud</h4><p>AWS / GCP basics, Deployment</p></div>
+        <div class="glass card"><h4>AI/ML</h4><p>Python • NumPy • Intro ML</p></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="glass container small">
+        <h3>Projects</h3>
+        <p><strong>Portfolio Website</strong> — This live page (hosted on GitHub Pages).</p>
+        <p>More projects will be added soon to the GitHub repo.</p>
+        <a href="https://github.com/yashrajchaudhari37-lgtm" target="_blank" rel="noreferrer" class="link">My GitHub →</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="glass container small">
+        <h3>Contact</h3>
+        <p>📧 yourname@gmail.com</p>
+        <p>🔗 <a class="link" href="https://github.com/yashrajchaudhari37-lgtm" target="_blank" rel="noreferrer">github.com/yashrajchaudhari37-lgtm</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small id="updated">Last updated: —</small>
+      <small>© <span id="year"></span> Yashraj Chaudhari</small>
+    </div>
+  </footer>
+
+  <script>
+    // small interactive nicety and "last updated" formatter
+    document.getElementById('helloBtn').addEventListener('click', () => {
+      alert('Thanks for visiting — I am learning fast and excited to contribute!');
+    });
+    const now = new Date();
+    document.getElementById('updated').textContent = 'Last updated: ' + now.toLocaleString();
+    document.getElementById('year').textContent = now.getFullYear();
+  </script>
 </body>
 </html>
