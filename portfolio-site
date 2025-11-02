@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yashraj's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Hi, I'm Yashraj 👋</h1>
+    <p>Aspiring Web Developer | Exploring Cloud & AI/ML</p>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I’m passionate about technology and enjoy building creative web projects. 
+    Currently learning JavaScript, Cloud, and AI tools.</p>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>📧 Email: yourname@gmail.com</p>
+    <p>💻 GitHub: <a href="https://github.com/your-username">github.com/your-username</a></p>
+  </section>
+</body>
+</html>
