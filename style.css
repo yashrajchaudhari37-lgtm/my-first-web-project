@@ -29,6 +29,29 @@ body{
 .links a{color:var(--muted);text-decoration:none;font-weight:600}
 .links a:hover{color:var(--accent);text-decoration:underline}
 
+/* Navigation Links Styling */
+nav.links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+nav.links a {
+  text-decoration: none;
+  color: #00c3ff;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* Hover effect */
+nav.links a:hover {
+  transform: scale(1.2);      /* Enlarge on hover */
+  color: #ff6b6b;             /* Optional: change color */
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.6);
+}
+
 /* glass effect */
 .glass{
   background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
