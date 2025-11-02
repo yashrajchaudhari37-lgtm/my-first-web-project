@@ -1,138 +1,73 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --bg:#0b1020;
+  --card: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.08);
+  --accent: #4dd0e1;
+  --muted: #aab3c0;
+  --max: 1100px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(77,208,225,0.06), transparent 15%),
+    radial-gradient(900px 400px at 90% 90%, rgba(144,85,255,0.04), transparent 12%),
+    var(--bg);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #0d1117;
-  color: #e6edf3;
-  line-height: 1.6;
+/* container */
+.container{width:90%;max-width:var(--max);margin:0 auto}
+
+/* nav */
+.nav{padding:18px 0;background:transparent}
+.brand{font-size:1.25rem;font-weight:700;letter-spacing:0.4px}
+.brand .accent{color:var(--accent)}
+.links{display:flex;gap:18px}
+.links a{color:var(--muted);text-decoration:none;font-weight:600}
+.links a:hover{color:var(--accent);text-decoration:underline}
+
+/* glass effect */
+.glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px) saturate(120%);
+  border-radius:14px;
+  padding:28px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background: #161b22;
+/* hero */
+.hero{padding:60px 0;display:flex;align-items:center;justify-content:center}
+.hero .lead{color:var(--muted);margin-top:8px}
+.actions{margin-top:16px;display:flex;gap:12px;justify-content:center}
+.btn{
+  background:var(--accent);color:#051023;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;border:none;cursor:pointer;
 }
+.btn.outline{background:transparent;color:var(--accent);border:1px solid rgba(77,208,225,0.15)}
+.btn:hover{transform:translateY(-2px);transition:all .18s ease}
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
+/* sections */
+.section{padding:36px 0}
+.small{max-width:800px;margin:0 auto;text-align:center}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;padding:18px 0}
+.card{padding:22px;text-align:center;border-radius:12px}
 
-.logo span {
-  color: #00c6ff;
-}
+/* text */
+h2,h3,h4{color:#eaf6fb;margin-bottom:8px}
+p{color:var(--muted);margin-top:8px}
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
+/* footer */
+.footer{margin-top:40px;padding:18px 0;background:transparent;border-top:1px solid rgba(255,255,255,0.02)}
+.footer .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.footer small{color:var(--muted);font-size:0.9rem}
 
-.nav-links a {
-  text-decoration: none;
-  color: #e6edf3;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #00c6ff;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #111827, #1e293b);
-}
-
-.hero h2 span {
-  color: #00c6ff;
-}
-
-.hero p {
-  margin-top: 10px;
-  color: #9ca3af;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #00c6ff;
-  color: #0d1117;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #0095cc;
-}
-
-/* About Section */
-.about, .skills, .projects, .contact {
-  padding: 60px 10%;
-  text-align: center;
-}
-
-.about p {
-  max-width: 600px;
-  margin: 20px auto;
-  color: #cbd5e1;
-}
-
-/* Skills */
-.skills-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.skills-list span {
-  background: #1f2937;
-  padding: 10px 15px;
-  border-radius: 5px;
-  color: #00c6ff;
-  font-weight: 500;
-}
-
-/* Projects */
-.project-card {
-  background: #161b22;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 400px;
-  text-align: center;
-}
-
-.project-card a {
-  color: #00c6ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #161b22;
-  color: #9ca3af;
-  font-size: 0.9rem;
-  margin-top: 40px;
+/* responsiveness */
+@media (max-width:720px){
+  .links{display:none}
+  .hero{padding:40px 0}
+  .glass{padding:20px}
+  .container{text-align:center}
 }
